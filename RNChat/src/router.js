@@ -12,6 +12,8 @@ import CreateDialogScreen from './components/CreateDialogScreen'
 import SearchUsers from './components/CreateDialogScreen/SearchUsers'
 import DialogsScreen from './components/DialogsScreen'
 import ChatScreen from './components/ChatScreen'
+import VideoScreen from './components/VideoScreen'
+
 
 const styles = StyleSheet.create({
 	navBar: {
@@ -94,6 +96,14 @@ class AppRouter extends Component {
 						component={CreateDialogScreen}
 						navBar={SearchUsers}
 					/>
+
+					<Scene key="videochat"
+						component={VideoScreen}
+						title="Video Chat"
+						tintColor="white"
+						hideNavBar
+					/>
+
 				</Scene>
 			</Router>
 		)

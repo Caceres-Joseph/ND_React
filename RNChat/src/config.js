@@ -13,3 +13,16 @@ export const connectycubeConfig = [
 		debug: { mode: 1 },
 	},
 ]
+
+export const users = [
+	{
+		"id": 398619,
+		"login": "jhosef",
+		"password": "jhosef123"
+	},
+	{
+		"id": 398620,
+		"login": "diego",
+		"password": "diego123"
+	}
+]

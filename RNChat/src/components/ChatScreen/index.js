@@ -20,8 +20,13 @@ import {setSelected, removeSelected} from '../../actions/selected';
 import Chat from '../../services/ChatService';
 import MessageModel from '../../models/Message';
 import Message from './Message';
+import { Actions } from 'react-native-router-flux'
+import UserService2 from '../../services/UserService2';
+
 
 export class ChatScreen extends Component {
+ 
+  
   constructor(props) {
     super(props);
 
@@ -85,9 +90,59 @@ export class ChatScreen extends Component {
     const text = this.state.messageValue.trim();
     const date = Math.floor(Date.now() / 1000);
 
+    //extrayendo las credenciales de cada usuario
+
+    /*
+    export const users = [
+		{
+			"id": 398619,
+			"login": "jhosef",
+			"password": "jhosef123"
+		},
+		{
+			"id": 398620,
+			"login": "diego",
+			"password": "diego123"
+		}
+	]
+
+     */
+
+
+    console.log("-------------------------- LLamando ------------------");
     console.log("Llamando");
-    //console.log(this.props);
+    
+    this._signIn(user);
+    //this.props.videoCallOpponentsIds([user.id]);
+    console.log(user);
   };
+
+  /**
+   * Login user and open call
+   * @param {*} userCredentials 
+   */
+  _signIn(userCredentials) {
+    //this.props.userIsLogging(true);
+
+    UserService2.signin(userCredentials)
+      .then(user => {
+        ChatService.connect(userCredentials)
+          .then(contacts => {
+            this.props.userLogin(user);
+            //this.props.userIsLogging(false);
+            Actions.videochat();
+          })
+          .catch(e => {
+            //this.props.userIsLogging(false);
+            alert(`Error.\n\n${JSON.stringify(e)}`);
+          });
+      })
+      .catch(e => {
+        //this.props.userIsLogging(false);
+        alert(`Error.\n\n${JSON.stringify(e)}`);
+      });
+  }
+
 
   _renderMessageItem(message) {
     isOtherSender = message.sender_id !== this.props.user.id;
