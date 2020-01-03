@@ -11,13 +11,13 @@ export default [
 
 export const users = [
 		{
-			"id": 72780,
-			"login": "videouser1",
-			"password": "videouser1"
+			"id": 398619,
+			"login": "jhosef",
+			"password": "jhosef123"
 		},
 		{
-			"id": 72781,
-			"login": "videouser2",
-			"password": "videouser2"
+			"id": 398620,
+			"login": "diego",
+			"password": "diego123"
 		}
 	]
