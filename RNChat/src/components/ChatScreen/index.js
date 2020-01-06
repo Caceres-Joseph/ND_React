@@ -111,8 +111,8 @@ export class ChatScreen extends Component {
 
     console.log("-------------------------- LLamando ------------------");
     console.log("Llamando");
-    
-    this._signIn(user);
+    Actions.videochat();
+    //this._signIn(user);
     //this.props.videoCallOpponentsIds([user.id]);
     console.log(user);
   };

@@ -1377,5 +1377,19 @@
         }
     },
     "theme": "vs-dark",
-    "themeBackground": "#1e1e1e"
+    "themeBackground": "#1e1e1e",
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/joseph/React/ND_Chat/connectycube-reactnative-samples/RNChat",
+            "backupPath": "/home/joseph/React/ND_Chat/connectycube-reactnative-samples/RNChat/~/.vscode-root/Backups/26121104915246ff311536adb1282fd0",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1024,
+                "height": 768
+            }
+        },
+        "openedWindows": []
+    }
 }

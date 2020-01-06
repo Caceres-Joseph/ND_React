@@ -9,19 +9,7 @@ export class VideoScreen extends React.Component {
   render() {
     return (
       <View style={{flex: 1, backgroundColor: 'black'}}>
-        <StatusBar backgroundColor="black" barStyle="light-content" animated />
-        <View removeClippedSubviews style={{flex: 1, overflow: 'hidden'}}>
-          {this.props.videoStreamsDataSource.map((item, i, arr) => (
-            <RTCView
-              objectFit="cover"
-              style={styles.videoView}
-              key={item.userId}
-              streamURL={item.stream.toURL()}
-            />
-          ))}
-        </View>
-        <CallingLoader />
-        <ToolBar />
+        
       </View>
     );
   }
